@@ -21,7 +21,7 @@ class BooksController < ApplicationController
 
   def destroy
   end
-  
+
   private
   # ストロングパラメータ
   def book_params

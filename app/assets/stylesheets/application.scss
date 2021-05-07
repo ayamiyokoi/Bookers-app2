@@ -14,3 +14,22 @@
  *= require_self
  */
 @import "bootstrap";
+header{
+  background-color:#343a40;
+  color:white;
+}
+header ul{
+  display:flex;
+  justify-content: flex-end;
+}
+
+header li{
+  list-style:none;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+ 
+}
+
+footer{
+  text-align:center;
+}
