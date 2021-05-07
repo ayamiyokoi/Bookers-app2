@@ -1,3 +1,15 @@
+<h1>New Book</h1>
+<!-- form_with部分 -->
+<%= form_with model: @book, url:'/books', local:true do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+  <h4>Opinion</h4>
+  <%= f.text_area :body %>
+  <p><%= f.submit 'Create Book' %></p>
+<% end %>
+
+
+<!--右側-->
 <h1>投稿一覧</h1>
 <% @books.each do |list| %>
   <p>タイトル</p>
@@ -5,5 +17,3 @@
       <%= link_to book.title, book_path(book.id) %>
   </span>
 <% end %>
-
-<p>投稿ユーザー画像：<%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
