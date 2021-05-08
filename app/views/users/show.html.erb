@@ -1,0 +1,36 @@
+<div class="index-page">
+<div class="left">
+  <div class="profile-container">
+  <h1>User info</h1>
+  <p>
+  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></p>
+  <h3 class="profile-name"><%= @user.name %></h3>
+  <p>introduction</p>
+  <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+</div>
+
+<!--左下部分-->
+<h1>New Book</h1>
+<!-- form_with部分 -->
+<%= form_with model: @book, url:'/books', local:true do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+  <h4>Opinion</h4>
+  <%= f.text_area :body %>
+  <p><%= f.submit 'Create Book' %></p>
+<% end %>
+</div>
+
+<div class="right">
+  <h1>Book Detail</h1>
+  <p><%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
+  <p><%= current_user.name %></p>
+<h4>Title</h4>
+<p><%= @book.title %></p>
+<h4>Opinion</h4>
+<p><%= @book.body %></p>
+<%= link_to "Edit", edit_book_path(@book) %>
+<%= link_to "Destroy", book_path(@book) %>
+</div>
+
+</div>

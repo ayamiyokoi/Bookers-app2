@@ -30,7 +30,7 @@
 <h4>Opinion</h4>
 <p><%= @book.body %></p>
 <%= link_to "Edit", edit_book_path(@book) %>
-<%= link_to "Destroy", book_path(@book) %>
+<%= link_to "Destroy", destroy_book_path(@book), method: :delete %>
 </div>
 
 </div>
