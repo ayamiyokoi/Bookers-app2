@@ -12,8 +12,12 @@
 <!--右側-->
 <h1>投稿一覧</h1>
 <% @books.each do |list| %>
-  <p>タイトル</p>
+  <p>Title</p>
   <span>
       <%= link_to book.title, book_path(book.id) %>
+  </span>
+  <p>Opinion</p>
+  <span>
+      <%= link_to book.body %>
   </span>
 <% end %>
