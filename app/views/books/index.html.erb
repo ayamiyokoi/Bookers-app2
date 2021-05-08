@@ -1,4 +1,12 @@
 <!--左上部分-->
+<div class="profile-container">
+  <h1>User info</h1>
+  <p>
+  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></p>
+  <h3 class="profile-name"><%= @user.name %></h3>
+  <p>introduction</p>
+  <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+</div>
 
 <!--左下部分-->
 <h1>New Book</h1>
@@ -23,6 +31,6 @@
   <span>
       <%= link_to book.body %>
   </span>
-  <%= link_to "Edit", '/books/edit/:id' %>
+  <%= link_to "Edit", edit_book_path(book) %>
   <%= link_to "Destroy", book_path(book) %>
 <% end %>
