@@ -1,3 +1,6 @@
+<!--左上部分-->
+
+<!--左下部分-->
 <h1>New Book</h1>
 <!-- form_with部分 -->
 <%= form_with model: @book, url:'/books', local:true do |f| %>
@@ -10,8 +13,8 @@
 
 
 <!--右側-->
-<h1>投稿一覧</h1>
-<% @books.each do |list| %>
+<h1>Book detail</h1>
+<% @books.each do |book| %>
   <p>Title</p>
   <span>
       <%= link_to book.title, book_path(book.id) %>
@@ -20,4 +23,6 @@
   <span>
       <%= link_to book.body %>
   </span>
+  <%= link_to "Edit", '/books/edit/:id' %>
+  <%= link_to "Destroy", book_path(book) %>
 <% end %>
