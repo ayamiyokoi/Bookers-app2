@@ -18,16 +18,27 @@ header{
   background-color:#343a40;
   color:white;
 }
-header ul{
-  display:flex;
+.container{
+   display: flex;
   justify-content: flex-end;
+  padding: 8px;
+}
+.container > :first-child {
+  margin-right: auto;
+}
+span{
+  font-size: 20px;
+  padding: 8px;
+}
+header ul{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom:0px;
 }
 
 header li{
   list-style:none;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
- 
+  padding: 8px;
 }
 
 footer{
