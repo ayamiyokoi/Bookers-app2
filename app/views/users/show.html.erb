@@ -5,7 +5,7 @@
   <p>
   <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></p>
   <h3 class="profile-name"><%= @user.name %></h3>
-  <p>introduction</p>
+  <p><%= @user.introduction %></p>
   <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
 </div>
 
