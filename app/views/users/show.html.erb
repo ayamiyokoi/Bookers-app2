@@ -22,10 +22,15 @@
         <td><%= @user.introduction %></td>
       </tr>
     </table>
+    <% if @user.id == current_user.id %>
      <div class="row"><%= link_to edit_user_path(@user), class: "btn btn-outline-secondary btn-lg btn-block" do %>
      <i class="fas fa-user-cog"></i>
      <% end %></div>
-
+     <% else %>
+     <div class="row"><%= link_to "#", class: "btn btn-outline-secondary btn-lg btn-block" do %>
+     <i class="fas fa-user-cog"></i><% end %>
+     </div>
+     <% end %>
   </div>
 
 <!--左下部分-->
