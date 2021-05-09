@@ -1,13 +1,26 @@
-<div class="index-page">
-<div class="left">
+<!--左上部分-->
+<div class="row">
+ <div class="col-md-3">
   <div class="profile-container">
-  <h1>User info</h1>
-  <p>
-  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></p>
-  <h3 class="profile-name"><%= @user.name %></h3>
-  <p><%= @user.introduction %></p>
-  <p><i class="fas fa-user-cog"></i><%= link_to "", edit_user_path(@user), class: "btn btn-outline-secondary" %></p>
-</div>
+    <h1>User info</h1>
+    <table>
+      <tr>
+        <%= attachment_image_tag @user, :profile_image, size: '100x100', format: 'jpeg', fallback: "no_image.jpg" %>
+      </tr>
+      <tr>
+        <th>name</th>
+        <td><%= @user.name %></td>
+      </tr>
+      <tr>
+        <th>introduction</th>
+        <td><%= @user.introduction %></td>
+      </tr>
+    </table>
+     <div class="row"><%= link_to edit_user_path(@user), class: "btn btn-outline-secondary btn-lg btn-block" do %>
+     <i class="fas fa-user-cog"></i>
+     <% end %></div>
+    
+  </div>
 
 <!--左下部分-->
 <h1>New Book</h1>
@@ -21,15 +34,27 @@
 <% end %>
 </div>
 
-<div class="right">
+<!--右側-->
+<div class="col-md-8 offset-md-1">
   <h1>Book Detail</h1>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+    </tr>
+  </thead>
+  <tbody>
    <% @user.books.each do |user| %>
-  <p><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
-  <p><%= @user.name %></p>
-<h4>Title</h4>
-<p><%= user.title %></p>
-<h4>Opinion</h4>
-<p><%= user.body %></p>
-</div>
+   <tr>
+     <td><%= attachment_image_tag @user, :profile_image, size: '40x40', fallback: "no_image.jpg" %><br><%= @user.name %></td>
+     <td><%= user.title %></td>
+     <td><%= user.body %></td>
+   </tr>
 <% end %>
+ </tbody>
+ </table>
+
+</div>
 </div>

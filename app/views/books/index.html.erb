@@ -1,25 +1,36 @@
 <!--左上部分-->
 <div class="row">
-<div class="col-md-3">
+ <div class="col-md-3">
   <div class="profile-container">
-  <h1>User info</h1>
-  <p>
-  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></p>
-  <h3 class="profile-name"><%= @user.name %></h3>
-  <p>introduction</p>
-  <p><i class="fas fa-user-cog"></i><%= link_to "", edit_user_path(@user), class: "btn btn-outline-secondary" %></p>
-</div>
+    <h1>User info</h1>
+    <table>
+      <tr>
+        <%= attachment_image_tag @user, :profile_image, size: '100x100', format: 'jpeg', fallback: "no_image.jpg" %>
+      </tr>
+      <tr>
+        <th>name</th>
+        <td><%= @user.name %></td>
+      </tr>
+      <tr>
+        <th>introduction</th>
+        <td><%= @user.introduction %></td>
+      </tr>
+    </table>
+    <div class="row"><%= link_to edit_user_path(@user), class: "btn btn-outline-secondary btn-lg btn-block" do %>
+     <i class="fas fa-user-cog"></i>
+     <% end %></div>
+  </div>
 
 <!--左下部分-->
-<h1>New Book</h1>
+  <h1>New Book</h1>
 <!-- form_with部分 -->
-<%= form_with model: @book, url:'/books', local:true do |f| %>
-  <p><%= f.label :Title %></p>
-  <%= f.text_field :title %>
-  <p><%= f.label :Opinion %></p>
-  <%= f.text_area :body %>
-  <p><%= f.submit 'Create Book' %></p>
-<% end %>
+  <%= form_with model: @book, url:'/books', local:true do |f| %>
+   <p><%= f.label :Title %></p>
+   <%= f.text_field :title %>
+   <p><%= f.label :Opinion %></p>
+   <%= f.text_area :body %>
+   <p><%= f.submit 'Create Book' %></p>
+  <% end %>
 </div>
 
 <!--右側-->
@@ -36,13 +47,13 @@
   <tbody>
     <% @books.each do |book| %>
     <tr>
-      <td><%= attachment_image_tag book.user, :profile_image, :size, 40, 40, fallback: "no_image.jpg" %></td>
+      <td><%= attachment_image_tag book.user, :profile_image, size: '40x40', fallback: "no_image.jpg" %></td>
       <td><%= link_to book.title, book_path(book.id) %></td>
       <td><%= book.body %></td>
     </tr>
     <% end %>
   </tbody>
+ </table>
 
-  </table>
-
+ </div>
 </div>
