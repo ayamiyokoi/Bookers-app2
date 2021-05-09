@@ -7,7 +7,7 @@
   <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></p>
   <h3 class="profile-name"><%= @user.name %></h3>
   <p>introduction</p>
-  <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+  <p><i class="fas fa-user-cog"></i><%= link_to "", edit_user_path(@user), class: "btn btn-outline-secondary" %></p>
 </div>
 
 <!--左下部分-->

@@ -6,13 +6,13 @@
   <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></p>
   <h3 class="profile-name"><%= @user.name %></h3>
   <p>introduction</p>
-  <p><i class="fas fa-user-cog"></i><%= link_to "", edit_user_path(@user), class: "btn btn-outline-secondary"%></p>
+  <p><i class="fas fa-user-cog"></i><%= link_to "", edit_user_path(@user), class: "btn btn-outline-secondary" %></p>
 </div>
 
 <!--左下部分-->
 <h1>New Book</h1>
 <!-- form_with部分 -->
-<%= form_with model: @book, url:'/books', local:true do |f| %>
+<%= form_with model: @book_new, url:'/books', local:true do |f| %>
   <h4>Title</h4>
   <%= f.text_field :title %>
   <h4>Opinion</h4>
