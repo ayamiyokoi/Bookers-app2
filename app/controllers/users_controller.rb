@@ -9,8 +9,7 @@ class UsersController < ApplicationController
     redirect_to user_path(@user.id)
     flash[:notice] =  'You have updated user successfully.'
     else
-    flash.now[:danger] = "登録に失敗しました"
-      render :new
+      render :show
     end
   end
 
@@ -30,8 +29,7 @@ class UsersController < ApplicationController
       redirect_to books_path
       flash[:notice] = 'Welcome! You have signed up successfully.'
     else
-      flash.now[:danger] = "登録に失敗しました"
-      render :new
+      redirect_to '/'
     end
   end
 

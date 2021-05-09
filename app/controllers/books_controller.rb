@@ -10,8 +10,9 @@ class BooksController < ApplicationController
       redirect_to book_path(@book)
       flash[:notice] = 'You have created book successfully.'
     else
-      flash.now[:danger] = "登録に失敗しました"
-      render :new
+      @books=Book.all
+      @user = current_user
+      render :index
     end
   end
 
@@ -39,8 +40,9 @@ class BooksController < ApplicationController
        redirect_to book_path(@book)
        flash[:notice] = 'You have updated book successfully.'
     else
-       flash.now[:danger] = "登録に失敗しました"
-      render :new
+      @books=Book.all
+      @user = current_user
+      render :index
     end
   end
 
