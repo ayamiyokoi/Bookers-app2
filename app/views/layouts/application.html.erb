@@ -11,9 +11,12 @@
 
   <body>
     <header>
-      <div class="container">
-<span><%= link_to "Bookers", "/", style: "color:white;" %></span>
-<ul>
+      <nav class="navbar">
+        <div class="container1">
+          <span><%= link_to "Bookers", "/", style: "color:white;" %></span>
+          <div></div>
+          <div>
+            <ul>
      <% if user_signed_in? %>
      <li><i class="fas fa-home"></i><%= link_to "Home", user_path(@user), style: "color:white;" %></li>
      <li><i class="fas fa-users"></i><%= link_to "Users", users_path, style: "color:white;" %></li>
@@ -30,9 +33,10 @@
       <li>
         <i class="fas fa-sign-in-alt"></i><%= link_to "login", new_user_session_path, style: "color:white;" %>
       </li>
-      </ul>
+      </ul></div>
     <% end %>
 </div>
+      </nav>
     </header>
     <p class="flash"><%= flash[:notice] %></p>
     <%= yield %>
