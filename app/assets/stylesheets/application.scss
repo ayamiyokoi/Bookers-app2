@@ -19,32 +19,32 @@ header{
   color:white;
 }
 
-.container1{
-   display: flex;
-  justify-content: flex-end;
-  padding: 8px;
-}
-.container > :first-child {
-  margin-right: auto;
-}
-span{
-  font-size: 20px;
-  padding: 8px;
-}
-header ul{
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom:0px;
-  text-align:left;
-}
+// .container1{
+//   display: flex;
+//   justify-content: flex-end;
+//   padding: 8px;
+// }
+// .container1 > :first-child {
+//   margin-right: auto;
+// }
+// span{
+//   font-size: 20px;
+//   padding: 8px;
+// }
+// header ul{
+//   display: flex;
+//   justify-content: flex-end;
+//   margin-bottom:0px;
+//   text-align:left;
+// }
 
-header li{
-  list-style:none;
-  padding: 8px;
-}
-.flash{
-  color:#008000;
-}
+// header li{
+//   list-style:none;
+//   padding: 8px;
+// }
+// .flash{
+//   color:#008000;
+// }
 
 footer{
   text-align:center;
