@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   # delete 'books/:id' => 'books#destroy', as: 'destroy_book'
   # get 'users/index'=> 'users#index', as: 'user_index'
   # root to: 'books#index'
+  get '/' => 'homes#top'
+  get 'homes/about' =>'homes#about', as: 'homes_about'
   resources :books, only: [:new, :create, :index, :show, :edit, :destroy, :update]
   resources :users, only: [:edit, :update, :index, :show]
-  resources :homes, only: [:top, :about]
 end
