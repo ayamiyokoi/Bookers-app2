@@ -5,15 +5,16 @@
   <% end %>
 <% end %>
 <!--左上部分-->
-<div class="row">
- <div class="col-md-3">
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
  <%= render 'users/info', new_user: @user %>
 
 <!--左下部分-->
 <%= render 'books/form', new_book: @book %>
-
+</div>
 <!--右側-->
-<div class="col-md-8 offset-md-1">
+   <div class="col-md-8 offset-md-1">
   <h1>Books</h1>
   <table class="table table-striped">
   <thead>
@@ -35,4 +36,6 @@
  </table>
 
 </div>
+
+  </div>
 </div>

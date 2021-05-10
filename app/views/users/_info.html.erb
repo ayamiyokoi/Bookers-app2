@@ -1,6 +1,7 @@
  <div class="profile-container">
     <h1>User info</h1>
     <table>
+      <tbody>
       <tr>
         <%= attachment_image_tag new_user, :profile_image, size: '100x100', format: 'jpeg', fallback: "no_image.jpg" %>
       </tr>
@@ -12,6 +13,7 @@
         <th>introduction</th>
         <td><%= new_user.introduction %></td>
       </tr>
+      </tbody>
     </table>
     <% if @user.id == current_user.id %>
      <div class="row"><%= link_to edit_user_path(new_user), class: "btn btn-outline-secondary btn-lg btn-block" do %>
