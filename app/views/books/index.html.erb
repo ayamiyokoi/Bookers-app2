@@ -7,41 +7,15 @@
 <!--左上部分-->
 <div class="row ">
  <div class="col-md-3">
-  <div class="profile-container">
-    <h1>User info</h1>
-    <table>
-      <tr>
-        <%= attachment_image_tag @user, :profile_image, size: '100x100', format: 'jpeg', fallback: "no_image.jpg" %>
-      </tr>
-      <tr>
-        <th>name</th>
-        <td><%= @user.name %></td>
-      </tr>
-      <tr>
-        <th>introduction</th>
-        <td><%= @user.introduction %></td>
-      </tr>
-    </table>
-    <div class="row"><%= link_to edit_user_path(@user), class: "btn btn-outline-secondary btn-lg btn-block" do %>
-     <i class="fas fa-user-cog"></i>
-     <% end %></div>
-  </div>
+ <%= render 'users/info', new_user: @user %>
 
 <!--左下部分-->
-  <h1>New book</h1>
-<!-- form_with部分 -->
-  <%= form_with model: @book, url:'/books', local:true do |f| %>
-   <p><%= f.label :Title %></p>
-   <%= f.text_field :title %>
-   <p><%= f.label :Opinion %></p>
-   <%= f.text_area :body %>
-   <p><%= f.submit 'Create Book' %></p>
-  <% end %>
+<%= render 'books/form', new_book: @book %>
 </div>
 
 <!--右側-->
 <div class="col-md-8 offset-md-1">
-<h1>Book detail</h1>
+<h1>Books</h1>
 <table class="table table-striped">
   <thead>
     <tr>
