@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     redirect_to user_path(@user.id)
     flash[:notice] =  'You have updated user successfully.'
     else
-      render :show
+      render :edit
     end
   end
 
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
       redirect_to books_path
       flash[:notice] = 'Welcome! You have signed up successfully.'
     else
-      redirect_to '/'
+      redirect_to user_path(current_user.id)
     end
   end
 
